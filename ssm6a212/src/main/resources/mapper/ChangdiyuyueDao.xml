@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChangdiyuyueDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChangdiyuyueEntity" id="changdiyuyueMap">
+        <result property="qiyezhanghao" column="qiyezhanghao"/>
+        <result property="changdimingcheng" column="changdimingcheng"/>
+        <result property="changdileixing" column="changdileixing"/>
+        <result property="changditupian" column="changditupian"/>
+        <result property="huiyizhuti" column="huiyizhuti"/>
+        <result property="canhuirenshu" column="canhuirenshu"/>
+        <result property="lianxiren" column="lianxiren"/>
+        <result property="lianxifangshi" column="lianxifangshi"/>
+        <result property="changdifeiyong" column="changdifeiyong"/>
+        <result property="shiyongshijian" column="shiyongshijian"/>
+        <result property="shiyongshizhang" column="shiyongshizhang"/>
+        <result property="zongji" column="zongji"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChangdiyuyueVO" >
+		SELECT * FROM changdiyuyue  changdiyuyue         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChangdiyuyueVO" >
+		SELECT  changdiyuyue.* FROM changdiyuyue  changdiyuyue
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChangdiyuyueView" >
+
+		SELECT  changdiyuyue.* FROM changdiyuyue  changdiyuyue 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChangdiyuyueView" >
+		SELECT * FROM changdiyuyue  changdiyuyue <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
